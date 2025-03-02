@@ -27,8 +27,9 @@ const getCategoryById = async (id) => {
 const createCategory = async (token, body) => {
   try {
     const response = await baseURL.post("/category", body, {
-      header: {
+      headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json"
       },
     });
     return response;

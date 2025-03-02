@@ -8,6 +8,9 @@ import Login from "views/auth/Login";
 import Register from "views/auth/Register";
 import AddProduct from "views/admin/pruduct/AddProduct";
 import { getAccessToken } from "service/Auth";
+import AddCategory from "views/admin/category/AddCategory";
+import EditCategory from "views/admin/category/EditCategory";
+import Category from "views/admin/category/Category";
 const App = () => {
 const token = getAccessToken();
 
@@ -22,7 +25,10 @@ const token = getAccessToken();
         <>
           <Route path="admin/*" element={<AdminLayout />} />
           <Route path="rtl/*" element={<RtlLayout />} />
+          {/* <Route path="/category" element={<Category/>} /> */}
           <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/addcategory" element={<AddCategory />} />
+          <Route path="/editcategory" element={<EditCategory />} />
         </>
       ) : (
         <Route path="/*" element={<Navigate to="/login"/>} />
